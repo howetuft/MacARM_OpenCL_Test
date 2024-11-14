@@ -36,7 +36,7 @@ jobs:
       - name: install opencl deps
         shell: bash
         run: |
-          brew install opencl-icd-loader
+          brew install pocl
           conda install conda-forge::conda-libmamba-solver
           conda install conda-forge::pyopencl
           #conda install conda-forge::pocl
