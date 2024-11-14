@@ -45,6 +45,7 @@ jobs:
         shell: bash
         run: |
           pip install numpy
+          pip install pyopencl
 
       - name: run script
         shell: bash
