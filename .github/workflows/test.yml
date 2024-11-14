@@ -37,7 +37,7 @@ jobs:
         run: |
           conda install conda-forge::conda-libmamba-solver
           conda install conda-forge::pyopencl
-          conda install conda-forge::pocl
+          #conda install conda-forge::pocl
           conda install conda-forge::ocl_icd_wrapper_apple
 
       - name: run script
