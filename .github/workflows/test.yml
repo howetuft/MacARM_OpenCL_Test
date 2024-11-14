@@ -37,6 +37,7 @@ jobs:
         shell: bash
         run: |
           brew install pocl
+          brew install clinfo
           conda install conda-forge::conda-libmamba-solver
           conda install conda-forge::pyopencl
           #conda install conda-forge::pocl
