@@ -41,6 +41,11 @@ jobs:
           #conda install conda-forge::pocl
           conda install conda-forge::ocl_icd_wrapper_apple
 
+      - name: install other deps
+        shell: bash
+        run: |
+          pip install numpy
+
       - name: run script
         shell: bash
         run: |
