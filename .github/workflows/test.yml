@@ -26,6 +26,7 @@ jobs:
       - name: install conda
         shell: bash
         run: |
+          brew install miniconda
           conda --version
           conda update conda
           conda config --add channels conda-forge
