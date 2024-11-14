@@ -43,4 +43,5 @@ jobs:
       - name: run script
         shell: bash
         run: |
+          ls ${{ github.workspace }}
           python ${{ github.workspace }}/main.py
