@@ -35,7 +35,8 @@ jobs:
       - name: install opencl deps
         shell: bash
         run: |
-          pip install pyopencl
+          conda install conda-forge::pyopencl
+          conda install conda-forge::conda-libmamba-solver
           conda install conda-forge::pocl
           conda install conda-forge::ocl_icd_wrapper_apple
 
