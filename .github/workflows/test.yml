@@ -1,0 +1,44 @@
+# SPDX-FileCopyrightText: 2024 Howetuft
+#
+# SPDX-License-Identifier: Apache-2.0
+
+name: LuxCore Python wheels
+
+on:
+  pull_request:
+  push:
+  workflow_dispatch:
+  release:
+    types:
+      - published
+
+jobs:
+  test_opencl:
+    name: Test OpenCL capabilities on macos-14
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-14]
+
+    steps:
+
+      - name: install conda
+        shell: bash
+        run: |
+          conda --version
+          conda update conda
+          conda config --add channels conda-forge
+          conda config --set channel_priority strict
+
+      - name: install opencl deps
+        shell: bash
+        run: |
+          pip install pyopencl
+          conda install conda-forge::pocl
+          conda install conda-forge::ocl_icd_wrapper_apple
+
+      - name: run script
+        shell: bash
+        run: |
+          python ${{ github.workspace }}/main.py
